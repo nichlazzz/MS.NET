@@ -106,7 +106,8 @@
 - Интерфейс для администратора должен быть интуитивно понятен и удобен в использовании.
 
 ## Проектная база
-<img width="787" alt="Снимок экрана 2024-10-09 в 09 05 31" src="https://github.com/user-attachments/assets/ddcc5846-836a-4fbe-a36a-b323c7d92df9">
+<img width="847" alt="Снимок экрана 2024-10-15 в 23 10 37" src="https://github.com/user-attachments/assets/1e175557-9f86-4086-89b4-5b21b96df5b5">
+
 
 
 

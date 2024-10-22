@@ -1,5 +1,4 @@
 /Users/a123/RiderProjects/MS.NET/Restoraunt/bin/Debug/net8.0/appsettings.Development.json
-/Users/a123/RiderProjects/MS.NET/Restoraunt/bin/Debug/net8.0/appsettings.json
 /Users/a123/RiderProjects/MS.NET/Restoraunt/bin/Debug/net8.0/Restoraunt
 /Users/a123/RiderProjects/MS.NET/Restoraunt/bin/Debug/net8.0/Restoraunt.deps.json
 /Users/a123/RiderProjects/MS.NET/Restoraunt/bin/Debug/net8.0/Restoraunt.runtimeconfig.json
@@ -185,3 +184,4 @@
 /Users/a123/RiderProjects/MS.NET/Restoraunt/bin/Debug/net8.0/runtimes/win/lib/net6.0/System.Security.Cryptography.ProtectedData.dll
 /Users/a123/RiderProjects/MS.NET/Restoraunt/bin/Debug/net8.0/runtimes/browser/lib/net8.0/System.Text.Encodings.Web.dll
 /Users/a123/RiderProjects/MS.NET/Restoraunt/bin/Debug/net8.0/runtimes/win/lib/net6.0/System.Windows.Extensions.dll
+/Users/a123/RiderProjects/MS.NET/Restoraunt/bin/Debug/net8.0/Restoraunt.Service/appsettings.json

@@ -7,18 +7,30 @@
     </PropertyGroup>
 
     <ItemGroup>
-        
+        <PackageReference Include="Duende.IdentityServer.AspNetIdentity" Version="7.0.7" />
+        <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="8.0.8"/>
+        <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="9.0.0-rc.2.24474.1" />
+        <PackageReference Include="Serilog.AspNetCore" Version="8.0.3" />
+        <PackageReference Include="Serilog.Enrichers.CorrelationId" Version="3.0.1" />
+        <PackageReference Include="Serilog.Expressions" Version="5.0.1-dev-00182" />
+        <PackageReference Include="Serilog.Extensions.Logging" Version="8.0.1-dev-10398" />
+        <PackageReference Include="Swashbuckle.AspNetCore" Version="6.9.0" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.0-rc.2.24474.1" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="9.0.0-rc.2.24474.1" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="9.0.0-rc.2.24474.1">
+            <PrivateAssets>all</PrivateAssets>
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
     </ItemGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\Restoraunt.DataAccess/Restoraunt.DataAccsess.csproj" />
-        <ProjectReference Include="..\Restoraunt.Service/IoC/Restoraunt.Service.csproj" />
+        <ProjectReference Include="..\Restoraunt.DataAccess\Restoraunt.DataAccess.csproj" />
+        <ProjectReference Include="..\Restoraunt.Service\IoC\Restoraunt.Service.csproj" />
     </ItemGroup>
 
     <ItemGroup>
         <Content Include="..\.dockerignore">
             <Link>.dockerignore</Link>
         </Content>
-        <Content Include="Restoraunt.Service\IoC\Restoraunt.Service.csproj" />
     </ItemGroup>
 </Project>

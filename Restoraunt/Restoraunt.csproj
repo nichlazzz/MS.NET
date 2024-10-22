@@ -7,7 +7,11 @@
     </PropertyGroup>
 
     <ItemGroup>
+        <PackageReference Include="AutoMapper" Version="13.0.1" />
         <PackageReference Include="Duende.IdentityServer.AspNetIdentity" Version="7.0.7" />
+        <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="8.0.10" />
+        <PackageReference Include="Microsoft.AspNetCore.Authentication.OpenIdConnect" Version="8.0.10" />
+        <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="8.0.10" />
         <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="8.0.8"/>
         <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="9.0.0-rc.2.24474.1" />
         <PackageReference Include="Serilog.AspNetCore" Version="8.0.3" />
@@ -23,14 +27,19 @@
         </PackageReference>
     </ItemGroup>
 
-    <ItemGroup>
-        <ProjectReference Include="..\Restoraunt.DataAccess\Restoraunt.DataAccess.csproj" />
-        <ProjectReference Include="..\Restoraunt.Service\IoC\Restoraunt.Service.csproj" />
-    </ItemGroup>
+<!--    <ItemGroup>-->
+<!--        <ProjectReference Include="..\Restoraunt.Restoraunt.DataAccess\Restoraunt.DataAccess.csproj" />-->
+<!--        <ProjectReference Include="..\Restoraunt.Restoraunt.Service\IoC\Restoraunt.Service.csproj" />-->
+<!--    </ItemGroup>-->
 
     <ItemGroup>
         <Content Include="..\.dockerignore">
             <Link>.dockerignore</Link>
         </Content>
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Remove="Properties\launchSettings.json" />
+      <None Include="Restoraunt.Service\Properties\launchSettings.json" />
     </ItemGroup>
 </Project>

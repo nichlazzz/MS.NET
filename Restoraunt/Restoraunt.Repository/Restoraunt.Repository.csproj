@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net7.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <RootNamespace>FintessClub.Repository</RootNamespace>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <Folder Include="Admin" />
+        <Folder Include="User" />
+        <Folder Include="Dish" />
+        <Folder Include="Menu" />
+        <Folder Include="Order" />
+        <Folder Include="FavoriteDish" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Restoraunt.DataAccess\Restoraunt.DataAccess.csproj" />
+    </ItemGroup>
+
+</Project>

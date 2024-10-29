@@ -3,7 +3,6 @@ using Restoraunt.Restoraunt.Service.Controllers.Entities;
 
 namespace Restoraunt.Restoraunt.BL.Auth;
 
-
 public interface IOrdersManager
 {
     // Create a new order

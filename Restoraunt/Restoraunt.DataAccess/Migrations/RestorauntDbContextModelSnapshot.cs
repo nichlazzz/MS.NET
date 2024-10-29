@@ -9,7 +9,6 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Restoraunt.Restoraunt.DataAccess;
 
 #nullable disable
-
 namespace Restoraunt.DataAccess.Migrations
 {
     [DbContext(typeof(RestorauntDbContext))]

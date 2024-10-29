@@ -1,6 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Restoraunt.Restoraunt.BL.Auth;
-
 [ApiController]
 [Route("[controller]")]
 public class AuthController : ControllerBase

@@ -1,7 +1,6 @@
 ﻿using Restoraunt.Restoraunt.DataAccess;
 
 namespace Restoraunt.Restoraunt.DataAccess;
-
 public interface IRepository<T> where T: BaseEntity
 {
     IQueryable<T> GetAll();

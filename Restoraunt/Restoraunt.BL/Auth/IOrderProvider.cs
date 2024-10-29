@@ -10,7 +10,6 @@ public interface IOrdersProvider
 
     // Get a specific order by Id
     Order GetOrderInfo(int id);
-
     // Get filtered orders
     IEnumerable<Order> GetOrders(OrdersFilter filter); 
 }

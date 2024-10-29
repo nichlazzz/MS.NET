@@ -39,5 +39,4 @@ public class RestorauntServiceProfile:Profile
         CreateMap<CreateUserRequest, User>();
         CreateMap<UpdateUserRequest, UpdateUserModel>();
     }
-
 }

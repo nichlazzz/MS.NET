@@ -4,7 +4,6 @@ public class AdminsModelFilter
 {
     public string Email { get; set; }
 }
-
 public class UpdateAdminModel
 {
     public string Email { get; set; }

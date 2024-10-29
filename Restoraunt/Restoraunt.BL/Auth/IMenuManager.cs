@@ -7,7 +7,6 @@ public interface IMenusManager
 {
     // Create a new menu
     Menu CreateMenu(CreateMenuRequest model);
-
     // Update an existing menu
     Menu UpdateMenu(int id, UpdateMenuRequest model);
 

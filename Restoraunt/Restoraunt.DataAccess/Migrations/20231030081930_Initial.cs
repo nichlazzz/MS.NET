@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Data.SqlTypes;
 using Microsoft.EntityFrameworkCore.Migrations;
-
 #nullable disable
 
 namespace Restoraunt.DataAccess.Migrations

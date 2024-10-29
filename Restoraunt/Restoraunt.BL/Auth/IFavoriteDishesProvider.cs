@@ -10,7 +10,6 @@ public interface IFavoriteDishesProvider
 
     // Get a specific favorite dish by Id
     FavoriteDish GetFavoriteDishInfo(int id);
-
     // Get filtered favorite dishes
     IEnumerable<FavoriteDish> GetFavoriteDishes(FavoriteDishesFilter filter); 
 }

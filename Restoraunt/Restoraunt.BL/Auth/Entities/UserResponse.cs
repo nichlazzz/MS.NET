@@ -5,7 +5,6 @@ public class UsersModelFilter
 {
     public string Email { get; set; }
 }
-
 public class UpdateUserModel
 {
     public string Email { get; set; }

@@ -1,5 +1,4 @@
 namespace Restoraunt.Restoraunt.DataAccess;
-
 public interface IBaseEntity
 {
     public int Id { get; set; }

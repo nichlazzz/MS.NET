@@ -1,7 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
 namespace Restoraunt.Restoraunt.Service.Controllers.Entities;
-
 public class RegisterUserRequest : IValidatableObject
 {
     public string FirstName { get; set; }

@@ -10,6 +10,7 @@ namespace Restoraunt.Restoraunt.Service.IoC;
 
 public static class AuthorizationConfigurator
 {
+    
     public static void ConfigureServices(this IServiceCollection services, RestorauntSettings settings)
     {
         IdentityModelEventSource.ShowPII = true;

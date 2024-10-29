@@ -1,5 +1,4 @@
 using System.ComponentModel.DataAnnotations.Schema;
-
 namespace Restoraunt.Restoraunt.DataAccess;
 [Table("menus")]
 public class Menu: BaseEntity

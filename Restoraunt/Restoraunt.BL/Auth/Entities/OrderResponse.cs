@@ -6,7 +6,6 @@ public class OrdersModelFilter
     public DateTime? DateCreateFrom { get; set; }
     public DateTime? DateCreateTo { get; set; }
 }
-
 public class UpdateOrderModel
 {
     public string Heading { get; set; }

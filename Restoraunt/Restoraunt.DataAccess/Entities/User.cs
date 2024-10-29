@@ -2,7 +2,6 @@ using System.ComponentModel.DataAnnotations.Schema;
 using Microsoft.AspNetCore.Identity;
 
 namespace Restoraunt.Restoraunt.DataAccess;
-
 [Table("users")]
 public class User : BaseEntity
 {

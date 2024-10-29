@@ -11,7 +11,6 @@ public interface IMenusProvider
 
     // Get a specific menu by Id
     Menu GetMenuInfo(int id);
-
     // Get filtered menus
     IEnumerable<Menu> GetMenus(MenusFilter filter);
 }

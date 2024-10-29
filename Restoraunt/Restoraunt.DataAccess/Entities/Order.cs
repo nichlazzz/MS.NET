@@ -1,6 +1,5 @@
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Net.Mime;
-
 namespace Restoraunt.Restoraunt.DataAccess;
 [Table("orders")]
 public class Order: BaseEntity

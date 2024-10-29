@@ -5,7 +5,6 @@ using IdentityModel.Client;
 using Microsoft.AspNetCore.Identity;
 using Restoraunt.Restoraunt.BL.Auth;
 
-
 public class AuthProvider : IAuthProvider
     {
         private readonly SignInManager<Admin> _signInManager;

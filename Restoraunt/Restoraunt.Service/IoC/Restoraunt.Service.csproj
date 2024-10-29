@@ -4,7 +4,6 @@
         <Nullable>enable</Nullable>
         <ImplicitUsings>enable</ImplicitUsings>
     </PropertyGroup>
-
     <ItemGroup>
         <PackageReference Include="Duende.IdentityServer.AspNetIdentity" Version="7.0.7" />
         <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="8.0.8" />

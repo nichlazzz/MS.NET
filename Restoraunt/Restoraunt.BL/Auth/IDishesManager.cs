@@ -7,7 +7,6 @@ public interface IDishesManager
 {
     // Create a new dish
     Dish CreateDish(CreateDishRequest model);
-
     // Update an existing dish
     Dish UpdateDish(int id, UpdateDishRequest model);
 

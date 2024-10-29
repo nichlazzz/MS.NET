@@ -2,7 +2,6 @@ using Restoraunt.Restoraunt.DataAccess;
 using Restoraunt.Restoraunt.Service.Controllers.Entities;
 
 namespace Restoraunt.Restoraunt.BL.Auth;
-
 public interface IUserProvider
 {
     // Get all admins

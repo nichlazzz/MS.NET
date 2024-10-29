@@ -2,7 +2,6 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Restoraunt.Restoraunt.Service.Controllers.Entities;
 
-
 public class CreateOrderRequest : IValidatableObject
 {
     [Required]

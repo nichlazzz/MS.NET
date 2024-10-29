@@ -6,3 +6,4 @@ public class UsersListResponse
 {
     public List<User> Users { get; set; }
 }
+

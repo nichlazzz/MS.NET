@@ -5,7 +5,6 @@ using Restoraunt.Restoraunt.BL.Auth;
 using Restoraunt.Restoraunt.Service.Controllers.Entities;
 
 namespace Restoraunt.Restoraunt.Service.Controllers;
-
 [Authorize]
 [ApiController]
 [Route("[controller]")]

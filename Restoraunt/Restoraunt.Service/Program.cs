@@ -1,7 +1,6 @@
 
 using Restoraunt.Restoraunt.Service.IoC;
 using Serilog;
-
 var configuration = new ConfigurationBuilder()
     .AddJsonFile("/Users/a123/RiderProjects/MS.NET/Restoraunt/appsettings.json", optional: false)
     .Build();

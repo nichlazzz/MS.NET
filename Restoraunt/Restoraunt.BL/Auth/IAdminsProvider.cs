@@ -10,7 +10,6 @@ public interface IAdminsProvider
 
     // Get a specific admin by Id
     Admin GetAdminInfo(int id);
-
     // Get filtered admins
     IEnumerable<Admin> GetAdmins(AdminsFilter filter);
 }

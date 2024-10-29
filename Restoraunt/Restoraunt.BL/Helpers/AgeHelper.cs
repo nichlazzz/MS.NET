@@ -1,5 +1,4 @@
 ﻿namespace Restoraunt.Restoraunt.BL.Helpers;
-
 public static class AgeHelper
 {
     public static int GetAge(DateTime birthdayDateTime)

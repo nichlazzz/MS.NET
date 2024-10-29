@@ -3,7 +3,7 @@ using Restoraunt.Restoraunt.Service.IoC;
 using Serilog;
 
 var configuration = new ConfigurationBuilder()
-    .AddJsonFile("appsettings.json", optional: false)
+    .AddJsonFile("/Users/a123/RiderProjects/MS.NET/Restoraunt/appsettings.json", optional: false)
     .Build();
 
 //var settings = LostPropertyOfficeSettingsReader.Read(configuration);
@@ -17,9 +17,9 @@ SwaggerConfigurator.ConfigureServices(builder.Services);
 
 var app = builder.Build();
 
-SerilogConfigurator.ConfigureApplication(app);
-SwaggerConfigurator.ConfigureApplication(app);
-DbContextConfigurator.ConfigureApplication(app);
+//SerilogConfigurator.ConfigureApplication(app);
+//SwaggerConfigurator.ConfigureApplication(app);
+//DbContextConfigurator.ConfigureApplication(app);
 
 app.UseHttpsRedirection();
 app.UseAuthorization();

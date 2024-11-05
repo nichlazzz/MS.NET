@@ -7,7 +7,6 @@ public class DishesModelFilter
     public decimal? MinCost { get; set; }
     public decimal? MaxCost { get; set; }
 }
-
 public class UpdateDishModel
 {
     public string Category { get; set; }

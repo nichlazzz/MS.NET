@@ -13,3 +13,4 @@ public interface IDishesManager
     // Delete a dish
     void DeleteDish(int id);
 }
+

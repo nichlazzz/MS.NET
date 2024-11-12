@@ -2,6 +2,7 @@ using AutoMapper;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Restoraunt.Restoraunt.BL.Auth;
+using Restoraunt.Restoraunt.BL.Auth.Entities;
 using Restoraunt.Restoraunt.Service.Controllers.Entities;
 
 namespace Restoraunt.Restoraunt.Service.Controllers;
@@ -66,7 +67,7 @@ public class MenusController : ControllerBase
     {
         try
         {
-            var menu = _menusManager.CreateMenu(_mapper.Map<CreateMenuRequest>(request));
+            var menu = _menusManager.CreateMenu(_mapper.Map<CreateMenuModel>(request));
             return Ok(menu);
         }
         catch (ArgumentException ex)
@@ -82,7 +83,7 @@ public class MenusController : ControllerBase
     {
         try
         {
-            var menu = _menusManager.UpdateMenu(id, _mapper.Map<UpdateMenuRequest>(request));
+            var menu = _menusManager.UpdateMenu(id, _mapper.Map<UpdateMenuModel>(request));
             return Ok(menu);
         }
         catch (ArgumentException ex)

@@ -4,7 +4,7 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace Restoraunt.Restoraunt.Service.UnitTests;
 
-public class TestWebApplicationFactory : WebApplicationFactory<Program>
+public class TestWebApplicationFactory 
 {
     private readonly Action<IServiceCollection>? _overrideDependencies;
 
@@ -13,7 +13,7 @@ public class TestWebApplicationFactory : WebApplicationFactory<Program>
         _overrideDependencies = overrideDependencies;
     }
 
-    protected override void ConfigureWebHost(IWebHostBuilder builder)
+    protected void ConfigureWebHost(IWebHostBuilder builder)
     {
         builder.ConfigureServices(services => _overrideDependencies?.Invoke(services));
     }

@@ -1,7 +1,9 @@
 using AutoMapper;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Restoraunt.DataAccess.Migrations.Restoraunt.BL.FavoriteDishes.Entities;
 using Restoraunt.Restoraunt.BL.Auth;
+using Restoraunt.Restoraunt.BL.FavoriteDishes.Entities;
 using Restoraunt.Restoraunt.Service.Controllers.Entities;
 
 namespace Restoraunt.Restoraunt.Service.Controllers;
@@ -10,12 +12,12 @@ namespace Restoraunt.Restoraunt.Service.Controllers;
 [Route("[controller]")]
 public class FavoriteDishesController : ControllerBase
 {
-    private readonly IFavoriteDishesProvider _favoriteDishesProvider;
-    private readonly IFavoriteDishesManager _favoriteDishesManager;
+    private readonly Restoraunt.BL.FavoriteDishes.IFavoriteDishProvider _favoriteDishesProvider;
+    private readonly Restoraunt.BL.FavoriteDishes.IFavoriteDishManager _favoriteDishesManager;
     private readonly IMapper _mapper;
     private readonly ILogger _logger;
 
-    public FavoriteDishesController(IFavoriteDishesProvider favoriteDishesProvider, IFavoriteDishesManager favoriteDishesManager, IMapper mapper,
+    public FavoriteDishesController(Restoraunt.BL.FavoriteDishes.FavoriteDishProvider favoriteDishesProvider, Restoraunt.BL.FavoriteDishes.IFavoriteDishManager favoriteDishesManager, IMapper mapper,
         ILogger logger)
     {
         _favoriteDishesManager = favoriteDishesManager;
@@ -38,7 +40,7 @@ public class FavoriteDishesController : ControllerBase
     [Route("filter")] //favorite-dishes/filter?filter.idUser=1
     public IActionResult GetFilteredFavoriteDishes([FromQuery] FavoriteDishesFilter filter)
     {
-        var favoriteDishes = _favoriteDishesProvider.GetFavoriteDishes(_mapper.Map<FavoriteDishesFilter>(filter));
+        var favoriteDishes = _favoriteDishesProvider.GetFavoriteDishes(_mapper.Map<FavoriteDishModelFilter>(filter));
         return Ok(new FavoriteDishesListResponse()
         {
             FavoriteDishes = favoriteDishes.ToList()
@@ -66,7 +68,7 @@ public class FavoriteDishesController : ControllerBase
     {
         try
         {
-            var favoriteDish = _favoriteDishesManager.CreateFavoriteDish(_mapper.Map<CreateFavoriteDishRequest>(request));
+            var favoriteDish = _favoriteDishesManager.CreateFavoriteDish(_mapper.Map<CreateFavoriteDishModel>(request));
             return Ok(favoriteDish);
         }
         catch (ArgumentException ex)
@@ -82,7 +84,7 @@ public class FavoriteDishesController : ControllerBase
     {
         try
         {
-            var favoriteDish = _favoriteDishesManager.UpdateFavoriteDish(id, _mapper.Map<UpdateFavoriteDishRequest>(request));
+            var favoriteDish = _favoriteDishesManager.UpdateFavoriteDish(id, _mapper.Map<UpdateFavoriteDishModel>(request));
             return Ok(favoriteDish);
         }
         catch (ArgumentException ex)

@@ -109,8 +109,5 @@ namespace Restoraunt.Restoraunt.Service.Tests
             response.StatusCode.Should().Be(HttpStatusCode.BadRequest);
         }
 
-        public LoginUserTests(WebApplicationFactory<Program> factory) : base(factory)
-        {
-        }
     }
 }

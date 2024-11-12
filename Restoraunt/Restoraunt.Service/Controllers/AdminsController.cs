@@ -2,6 +2,7 @@ using AutoMapper;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Restoraunt.Restoraunt.BL.Auth;
+using Restoraunt.Restoraunt.BL.Auth.Entities;
 using Restoraunt.Restoraunt.Service.Controllers.Entities;
 
 namespace Restoraunt.Restoraunt.Service.Controllers;
@@ -35,9 +36,9 @@ public class AdminsController : ControllerBase
     }
     [HttpGet]
     [Route("filter")] //admins/filter?filter.email=admin@example.com
-    public IActionResult GetFilteredAdmins([FromQuery] AdminsFilter filter)
+    public IActionResult GetFilteredAdmins([FromQuery] AdminModelFilter filter)
     {
-        var admins = _adminsProvider.GetAdmins(_mapper.Map<AdminsFilter>(filter));
+        var admins = _adminsProvider.GetAdmins(_mapper.Map<AdminModelFilter>(filter));
         return Ok(new AdminsListResponse()
         {
             Admins = admins.ToList()
@@ -81,7 +82,7 @@ public class AdminsController : ControllerBase
     {
         try
         {
-            var admin = _adminsManager.UpdateAdmin(id, _mapper.Map<UpdateAdminRequest>(request));
+            var admin = _adminsManager.UpdateAdmin(id, _mapper.Map<UpdateAdminModel>(request));
             return Ok(admin);
         }
         catch (ArgumentException ex)

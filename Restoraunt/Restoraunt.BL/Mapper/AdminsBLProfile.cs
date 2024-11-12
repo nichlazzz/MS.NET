@@ -2,7 +2,7 @@ using AutoMapper;
 using Restoraunt.Restoraunt.BL.Trainers.Entities;
 using Restoraunt.Restoraunt.DataAccess;
 
-namespace FitnessClub.BL.Mapper;
+namespace Restoraunt.Restoraunt.BL.Mapper;
 
 public class AdminBLProfile : Profile
 {

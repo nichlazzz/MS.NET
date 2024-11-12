@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Restoraunt.Restoraunt.BL.Auth;
+using Restoraunt.Restoraunt.BL.Auth.Entities;
 using Restoraunt.Restoraunt.BL.Trainers.Entities;
 using Restoraunt.Restoraunt.DataAccess;
 using Restoraunt.Restoraunt.Service.Controllers.Entities;
@@ -24,7 +25,7 @@ public class AdminsManager : IAdminsManager
         return _mapper.Map<AdminModel>(entity);
     }
 
-    public AdminModel UpdateAdmin(int id, UpdateAdminRequest model)
+    public AdminModel UpdateAdmin(int id, UpdateAdminModel model)
     {
         var entity = _adminsRepository.GetById(id);
         if (entity == null)

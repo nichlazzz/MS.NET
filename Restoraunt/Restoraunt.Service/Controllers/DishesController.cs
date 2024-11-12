@@ -1,8 +1,11 @@
 using AutoMapper;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Restoraunt.Restoraunt.BL.Auth;
+using Restoraunt.Restoraunt.BL.Auth.Entities;
 using Restoraunt.Restoraunt.Service.Controllers.Entities;
+using Restoraunt.Restoraunt.BL.Dishes;
+using Restoraunt.Restoraunt.BL.Dishes.Entities;
+using UpdateDishModel = Restoraunt.Restoraunt.BL.Dishes.Entities.UpdateDishModel;
 
 namespace Restoraunt.Restoraunt.Service.Controllers;
 [Authorize]
@@ -10,12 +13,12 @@ namespace Restoraunt.Restoraunt.Service.Controllers;
 [Route("[controller]")]
 public class DishesController : ControllerBase
 {
-    private readonly IDishesProvider _dishesProvider;
-    private readonly IDishesManager _dishesManager;
+    private readonly Restoraunt.BL.Dishes.IDishProvider _dishesProvider;
+    private readonly Restoraunt.BL.Dishes.IDishManager _dishesManager;
     private readonly IMapper _mapper;
     private readonly ILogger _logger;
 
-    public DishesController(IDishesProvider dishesProvider, IDishesManager dishesManager, IMapper mapper,
+    public DishesController(Restoraunt.BL.Dishes.IDishProvider dishesProvider, Restoraunt.BL.Dishes.IDishManager dishesManager, IMapper mapper,
         ILogger logger)
     {
         _dishesManager = dishesManager;
@@ -38,7 +41,7 @@ public class DishesController : ControllerBase
     [Route("filter")] //dishes/filter?filter.category=Pizza
     public IActionResult GetFilteredDishes([FromQuery] DishesFilter filter)
     {
-        var dishes = _dishesProvider.GetDishes(_mapper.Map<DishesFilter>(filter));
+        var dishes = _dishesProvider.GetDishes(_mapper.Map<DishModelFilter>(filter));
         return Ok(new DishesListResponse()
         {
             Dishes = dishes.ToList()
@@ -66,7 +69,7 @@ public class DishesController : ControllerBase
     {
         try
         {
-            var dish = _dishesManager.CreateDish(_mapper.Map<CreateDishRequest>(request));
+            var dish = _dishesManager.CreateDish(_mapper.Map<CreateDishModel>(request));
             return Ok(dish);
         }
         catch (ArgumentException ex)
@@ -82,7 +85,7 @@ public class DishesController : ControllerBase
     {
         try
         {
-            var dish = _dishesManager.UpdateDish(id, _mapper.Map<UpdateDishRequest>(request));
+            var dish = _dishesManager.UpdateDish(id, _mapper.Map<UpdateDishModel>(request));
             return Ok(dish);
         }
         catch (ArgumentException ex)

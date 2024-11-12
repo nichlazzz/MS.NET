@@ -20,37 +20,37 @@ namespace Restoraunt.Restoraunt.Service.UnitTests;
 
 public class RestorauntServiceTestsBaseClass
 {
-    public RestorauntServiceTestsBaseClass(WebApplicationFactory<Program> factory)
-    {
-        _factory = factory;
-
-        var settings = TestSettingsHelper.GetSettings();
-
-        _testServer = factory.WithWebHostBuilder(builder =>
-        {
-            builder.ConfigureServices(services =>
-            {
-                services.Replace(ServiceDescriptor.Scoped(_ =>
-                {
-                    var httpClientFactoryMock = new Mock<IHttpClientFactory>();
-                    httpClientFactoryMock.Setup(x => x.CreateClient(It.IsAny<string>()))
-                        .Returns(TestHttpClient);
-                    return httpClientFactoryMock.Object;
-                }));
-                services.PostConfigureAll<JwtBearerOptions>(options =>
-                {
-                    options.ConfigurationManager = new ConfigurationManager<OpenIdConnectConfiguration>(
-                        $"{settings.IdentityServerUri}/.well-known/openid-configuration",
-                        new OpenIdConnectConfigurationRetriever(),
-                        new HttpDocumentRetriever(TestHttpClient)
-                        {
-                            RequireHttps = false,
-                            SendAdditionalHeaderData = true
-                        });
-                });
-            });
-        });           TestHttpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", "token");
-        }
+    // public RestorauntServiceTestsBaseClass(WebApplicationFactory<Program> factory)
+    // {
+    //     _factory = factory;
+    //
+    //     var settings = TestSettingsHelper.GetSettings();
+    //
+    //     _testServer = factory.WithWebHostBuilder(builder =>
+    //     {
+    //         builder.ConfigureServices(services =>
+    //         {
+    //             services.Replace(ServiceDescriptor.Scoped(_ =>
+    //             {
+    //                 var httpClientFactoryMock = new Mock<IHttpClientFactory>();
+    //                 httpClientFactoryMock.Setup(x => x.CreateClient(It.IsAny<string>()))
+    //                     .Returns(TestHttpClient);
+    //                 return httpClientFactoryMock.Object;
+    //             }));
+    //             services.PostConfigureAll<JwtBearerOptions>(options =>
+    //             {
+    //                 options.ConfigurationManager = new ConfigurationManager<OpenIdConnectConfiguration>(
+    //                     $"{settings.IdentityServerUri}/.well-known/openid-configuration",
+    //                     new OpenIdConnectConfigurationRetriever(),
+    //                     new HttpDocumentRetriever(TestHttpClient)
+    //                     {
+    //                         RequireHttps = false,
+    //                         SendAdditionalHeaderData = true
+    //                     });
+    //             });
+    //         });
+    //     });           TestHttpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", "token");
+    //     }
 
         [OneTimeSetUp]
         public async Task OneTimeSetupAsync()

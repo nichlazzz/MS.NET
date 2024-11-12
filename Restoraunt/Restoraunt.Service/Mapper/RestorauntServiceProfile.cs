@@ -1,7 +1,9 @@
 using Restoraunt.Restoraunt.BL.Auth.Entities;
 using Restoraunt.Restoraunt.Service.Controllers.Entities;
 using AutoMapper;
+using Restoraunt.Restoraunt.BL.Trainers.Entities;
 using Restoraunt.Restoraunt.DataAccess;
+using AdminsModelFilter = Restoraunt.Restoraunt.BL.Auth.Entities.AdminModelFilter;
 
 namespace Restoraunt.Restoraunt.Service.Mapper;
 
@@ -10,8 +12,8 @@ public class RestorauntServiceProfile:Profile
     public RestorauntServiceProfile()
     {
         // Admin
-        CreateMap<AdminsFilter, AdminsModelFilter>();
-        CreateMap<CreateAdminRequest, Admin>();
+        CreateMap<AdminsModelFilter, AdminsModelFilter>();
+        CreateMap<CreateAdminRequest, AdminModel>();
         CreateMap<UpdateAdminRequest, UpdateAdminModel>();
 
         // Dish
@@ -35,7 +37,7 @@ public class RestorauntServiceProfile:Profile
         CreateMap<UpdateOrderRequest, UpdateOrderModel>();
 
         // User
-        CreateMap<UsersFilter, UsersModelFilter>();
+        CreateMap<UsersFilter, UserModelFilter>();
         CreateMap<CreateUserRequest, User>();
         CreateMap<UpdateUserRequest, UpdateUserModel>();
     }

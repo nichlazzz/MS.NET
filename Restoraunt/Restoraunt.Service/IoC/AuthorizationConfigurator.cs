@@ -1,80 +1,80 @@
-﻿using Duende.IdentityServer.Models;
-using Restoraunt.Restoraunt.DataAccess;
+using Duende.IdentityServer.Models;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.IdentityModel.Logging;
 using Microsoft.IdentityModel.Tokens;
+using Restoraunt.Restoraunt.DataAccess;
 using Restoraunt.Restoraunt.Service.Settings;
 
 namespace Restoraunt.Restoraunt.Service.IoC;
 
 public static class AuthorizationConfigurator
 {
-    
     public static void ConfigureServices(this IServiceCollection services, RestorauntSettings settings)
     {
+        // Enable PII in IdentityModelEventSource for debugging
         IdentityModelEventSource.ShowPII = true;
-        services.AddIdentity<User, User.UserRoleEntity>(options =>
-            {
-                options.Password.RequireDigit = true;
-                options.Password.RequireUppercase = true;
-            })
-            .AddEntityFrameworkStores<RestorauntDbContext>()
-            .AddSignInManager<SignInManager<User>>()
-            .AddDefaultTokenProviders();
 
+        // Configure Identity for your User and Role entities
+        services.AddIdentity<User, User>(options =>
+        {
+            options.Password.RequireDigit = true;
+            options.Password.RequireUppercase = true;
+        })
+        .AddEntityFrameworkStores<RestorauntDbContext>()
+        .AddSignInManager<SignInManager<User>>()
+        .AddDefaultTokenProviders();
+
+        // Configure IdentityServer
         services.AddIdentityServer()
-            .AddInMemoryApiScopes(new[] { new ApiScope("api") })
-            .AddInMemoryClients(new[]
+            .AddInMemoryApiScopes(new[] { new ApiScope("api") }) // Define your API scope(s)
+            .AddInMemoryClients(new[] 
             {
-                new Client()
+                new Client
                 {
-                    ClientName = settings.ClientId,
-                    ClientId = settings.ClientId,
+                    ClientName = settings.ClientId, // Your client name
+                    ClientId = settings.ClientId, // Your client ID
                     Enabled = true,
-                    AllowOfflineAccess = true,
-                    AllowedGrantTypes = new List<string>()
-                    {
-                        GrantType.ClientCredentials,
-                        GrantType.ResourceOwnerPassword
-                    },
-                    ClientSecrets = new List<Secret>()
-                    {
-                        new(settings.ClientSecret.Sha256())
-                    },
-                    AllowedScopes = new List<string>() { "api" }
+                    AllowOfflineAccess = true, 
+                    AllowedGrantTypes = GrantTypes.ResourceOwnerPasswordAndClientCredentials, // Allow resource owner password and client credentials grant types
+                    ClientSecrets = { new Secret(settings.ClientSecret.Sha256()) },
+                    AllowedScopes = { "api" } // Grant access to the "api" scope
                 }
             })
             .AddAspNetIdentity<User>();
 
+        // Configure JWT Bearer Authentication
         services.AddAuthentication(options =>
-            {
-                options.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
-                options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
-                options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
-            }
-        ).AddJwtBearer(JwtBearerDefaults.AuthenticationScheme, options =>
         {
-            options.RequireHttpsMetadata = false;
-            options.Authority = settings.IdentityServerUri;
-            options.TokenValidationParameters = new TokenValidationParameters()
+            options.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
+            options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+            options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+        })
+        .AddJwtBearer(JwtBearerDefaults.AuthenticationScheme, options =>
+        {
+            // Configure JWT Bearer Authentication
+            options.RequireHttpsMetadata = false; // Enable or disable HTTPS validation
+            options.Authority = settings.IdentityServerUri; // Your IdentityServer URI 
+            options.TokenValidationParameters = new TokenValidationParameters
             {
-                ValidateIssuerSigningKey = false,
-                ValidateIssuer = false,
-                ValidateAudience = false,
+                ValidateIssuerSigningKey = false, // Set to true if you have a signing key
+                ValidateIssuer = false, // Set to true if you have an issuer
+                ValidateAudience = false, // Set to true if you have an audience
                 RequireExpirationTime = true,
                 ValidateLifetime = true,
                 ClockSkew = TimeSpan.Zero
             };
-            options.Audience = "api";
+            options.Audience = "api"; // Your API resource name
         });
 
+        // Add Authorization
         services.AddAuthorization();
     }
 
     public static void ConfigureApplication(IApplicationBuilder app)
     {
-        app.UseIdentityServer();
+        // Use IdentityServer middleware
+        app.UseIdentityServer(); 
         app.UseAuthentication();
         app.UseAuthorization();
     }

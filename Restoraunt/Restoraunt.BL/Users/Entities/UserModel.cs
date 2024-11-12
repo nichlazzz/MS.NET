@@ -1,3 +1,6 @@
+using Restoraunt.DataAccess.Migrations.Restoraunt.BL.FavoriteDishes.Entities;
+using Restoraunt.DataAccess.Migrations.Restoraunt.BL.Orders.Entities;
+
 namespace Restoraunt.Restoraunt.BL.Auth.Entities;
 
 public class UserModel

@@ -1,3 +1,4 @@
+using Restoraunt.Restoraunt.BL.Auth.Entities;
 using Restoraunt.Restoraunt.BL.Trainers.Entities;
 using Restoraunt.Restoraunt.DataAccess;
 using Restoraunt.Restoraunt.Service.Controllers.Entities;
@@ -10,7 +11,7 @@ public interface IAdminsManager
     AdminModel CreateAdmin(CreateAdminRequest model);
 
     // Update an existing admin
-    AdminModel UpdateAdmin(int id, UpdateAdminRequest model);
+    AdminModel UpdateAdmin(int id, UpdateAdminModel model);
 
     // Delete an admin
     void DeleteAdmin(int id);

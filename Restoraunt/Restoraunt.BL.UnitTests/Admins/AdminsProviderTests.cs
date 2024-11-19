@@ -162,4 +162,3 @@ using Restoraunt.Restoraunt.DataAccess;
             Assert.Throws<ArgumentException>(() => adminsManager.DeleteAdmin(999));
         }
     }
-

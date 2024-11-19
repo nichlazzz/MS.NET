@@ -1,5 +1,4 @@
 ﻿using System.Net;
-using FitnessClub.Service.UnitTests;
 using Restoraunt.Restoraunt.BL.Auth.Entities;
 using Restoraunt.Restoraunt.DataAccess;
 using Restoraunt.Restoraunt.DataAccess;

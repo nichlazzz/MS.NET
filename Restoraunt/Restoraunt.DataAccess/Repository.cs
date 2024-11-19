@@ -4,7 +4,7 @@ namespace Restoraunt.Restoraunt.DataAccess;
 
 public class Repository<T> : IRepository<T> where T : BaseEntity
 {
-    public Repository(IDbContextFactory<DbContext> contextFactory)
+    public Repository(IDbContextFactory<RestorauntDbContext> contextFactory)
     {
         _contextFactory = contextFactory;
     }
@@ -57,5 +57,5 @@ public class Repository<T> : IRepository<T> where T : BaseEntity
         context.SaveChanges();
     }
 
-    private readonly IDbContextFactory<DbContext> _contextFactory;
+    private readonly IDbContextFactory<RestorauntDbContext> _contextFactory;
 }

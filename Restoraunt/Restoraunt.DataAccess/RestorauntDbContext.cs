@@ -1,28 +1,22 @@
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Restoraunt.Restoraunt.BL.Auth.Entities;
+
 namespace Restoraunt.Restoraunt.DataAccess;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
-public class RestorauntDbContext : DbContext
+public class RestorauntDbContext : IdentityDbContext<UserModel, IdentityRole<int>, int>
 {
     public DbSet<Admin> Admins { get; set; }
     public DbSet<Dish> Dishes { get; set; }
     public DbSet<FavoriteDish> FavoriteDishes { get; set; }
     public DbSet<Menu> Menus { get; set; }
     public DbSet<Order> Orders { get; set; }
-    public DbSet<User> Users { get; set; }
 
-    // Identity entities
-    public DbSet<AdminRoleEntity> AdminRoles { get; set; }
-    public DbSet<IdentityRole<int>> Roles { get; set; }
-    public DbSet<IdentityUserRole<int>> UserRoles { get; set; }
-    public DbSet<IdentityUserClaim<int>> UserClaims { get; set; }
-    public DbSet<IdentityUserLogin<int>> UserLogins { get; set; }
-    public DbSet<IdentityUserToken<int>> UserTokens { get; set; }
-
-    public RestorauntDbContext(DbContextOptions options) : base(options)
+    public RestorauntDbContext(DbContextOptions<RestorauntDbContext> options)
+        : base(options)
     {
     }
-
     protected override void OnModelCreating(ModelBuilder builder)
     {
         base.OnModelCreating(builder);
@@ -94,4 +88,7 @@ public class RestorauntDbContext : DbContext
             .WithMany(d => d.FavoriteDishes) 
             .HasForeignKey(m => m.IdUser); 
     }
+
+   
 }
+

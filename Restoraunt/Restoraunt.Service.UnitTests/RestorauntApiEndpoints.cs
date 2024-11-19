@@ -1,4 +1,4 @@
-namespace FitnessClub.Service.UnitTests;
+namespace Restoraunt.Restoraunt.Service.UnitTests;
 
 public static class RestorauntApiEndpoints
 {

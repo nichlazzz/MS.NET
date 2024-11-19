@@ -9,7 +9,7 @@ using Restoraunt.Restoraunt.BL.FavoriteDishes;
 using Restoraunt.Restoraunt.BL.FavoriteDishes.Entities;
 using Restoraunt.Restoraunt.DataAccess;
 
-namespace FitnessClub.BL.UnitTests.FavoriteDishes;
+namespace Restoraunt.Restoraunt.BL.UnitTests.FavoriteDishes;
 
  [TestFixture]
     public class FavoriteDishProviderTests

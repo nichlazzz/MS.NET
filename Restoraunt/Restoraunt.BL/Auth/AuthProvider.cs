@@ -85,3 +85,4 @@ public class AuthProvider : IAuthProvider
             var createUserResult = await _userManager.CreateAsync(admin, password);
         }
     }
+

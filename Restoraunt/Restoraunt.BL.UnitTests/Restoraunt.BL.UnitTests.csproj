@@ -20,9 +20,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\FitnessClub.BL\FitnessClub.BL.csproj" />
-    <ProjectReference Include="..\FitnessClub.DataAccess\FitnessClub.DataAccess.csproj" />
-    <ProjectReference Include="..\FitnessClub.Service\FitnessClub.Service.csproj" />
+    <ProjectReference Include="..\Restoraunt.BL\Restoraunt.BL.csproj" />
+    <ProjectReference Include="..\Restoraunt.DataAccess\Restoraunt.DataAccess.csproj" />
+    <ProjectReference Include="..\Restoraunt.Service\Restoraunt.Service.csproj" />
   </ItemGroup>
 
 </Project>

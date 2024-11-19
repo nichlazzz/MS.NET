@@ -6,7 +6,7 @@ using Restoraunt.DataAccess.Migrations.Restoraunt.BL.Orders.Entities;
 using Restoraunt.Restoraunt.BL.Orders;
 using Restoraunt.Restoraunt.DataAccess;
 
-namespace FitnessClub.BL.UnitTests;
+namespace Restoraunt.Restoraunt.BL.UnitTests;
 
    [TestFixture]
     public class OrderProviderTests

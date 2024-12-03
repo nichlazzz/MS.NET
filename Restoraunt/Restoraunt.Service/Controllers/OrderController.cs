@@ -5,6 +5,7 @@ using Restoraunt.DataAccess.Migrations.Restoraunt.BL.Orders.Entities;
 using Restoraunt.Restoraunt.BL.Auth;
 using Restoraunt.Restoraunt.BL.Auth.Entities;
 using Restoraunt.Restoraunt.Service.Controllers.Entities;
+using OrdersFilter = Restoraunt.Restoraunt.BL.Orders.Entities.OrdersFilter;
 using UpdateOrderModel = Restoraunt.DataAccess.Migrations.Restoraunt.BL.Orders.Entities.UpdateOrderModel;
 
 namespace Restoraunt.Restoraunt.Service.Controllers;

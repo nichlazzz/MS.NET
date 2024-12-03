@@ -1,6 +1,7 @@
 using Restoraunt.Restoraunt.BL.Auth.Entities;
 using Restoraunt.Restoraunt.DataAccess;
 using Restoraunt.Restoraunt.Service.Controllers.Entities;
+using MenusFilter = Restoraunt.Restoraunt.BL.Menues.Entities.MenusFilter;
 
 namespace Restoraunt.Restoraunt.BL.Auth;
 

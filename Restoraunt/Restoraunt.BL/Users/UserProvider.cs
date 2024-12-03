@@ -2,6 +2,7 @@ using AutoMapper;
 using Restoraunt.Restoraunt.BL.Auth.Entities;
 using Restoraunt.Restoraunt.DataAccess;
 using Restoraunt.Restoraunt.Service.Controllers.Entities;
+using UsersFilter = Restoraunt.Restoraunt.BL.Users.Entities.UsersFilter;
 
 namespace Restoraunt.Restoraunt.BL.Auth;
 

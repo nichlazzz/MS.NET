@@ -4,5 +4,5 @@ public static class RestorauntApiEndpoints
 {
     public const string AuthorizeUserEndpoint = "auth/login";
     public const string RegisterUserEndpoint = "auth/register";
-    public const string GetAllTrainersEndpoint = "trainers";
+    public const string GetAllAdminsEndpoint = "admins";
 }

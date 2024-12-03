@@ -10,11 +10,19 @@
         <PackageReference Include="AutoMapper" Version="13.0.1" />
         <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.1" />
         <PackageReference Include="Duende.IdentityServer.AspNetIdentity" Version="7.0.7" />
+        <PackageReference Include="Duende.IdentityServer.EntityFramework" Version="7.1.0-preview.1" />
+        <PackageReference Include="FluentAssertions" Version="7.0.0-alpha.5" />
+        <PackageReference Include="FluentValidation" Version="11.11.0" />
         <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="8.0.10" />
         <PackageReference Include="Microsoft.AspNetCore.Authentication.OpenIdConnect" Version="8.0.10" />
         <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="8.0.10" />
+        <PackageReference Include="Microsoft.AspNetCore.Mvc.Testing" Version="8.0.5" />
         <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="8.0.8"/>
         <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="9.0.0-rc.2.24474.1" />
+        <PackageReference Include="Moq" Version="4.20.72" />
+        <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+        <PackageReference Include="Nunit.Framework.TestCaseStorage" Version="1.0.1" />
+        <PackageReference Include="NUnitLite" Version="4.2.2" />
         <PackageReference Include="Serilog.AspNetCore" Version="8.0.3" />
         <PackageReference Include="Serilog.Enrichers.CorrelationId" Version="3.0.1" />
         <PackageReference Include="Serilog.Expressions" Version="5.0.1-dev-00182" />
@@ -26,6 +34,8 @@
             <PrivateAssets>all</PrivateAssets>
             <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
         </PackageReference>
+        <PackageReference Include="xunit" Version="2.9.2" />
+        <PackageReference Include="xunit.assert" Version="2.9.2" />
     </ItemGroup>
 
 <!--    <ItemGroup>-->
@@ -35,8 +45,12 @@
 
     <ItemGroup>
         <Content Include="..\.dockerignore">
-            <Link>.dockerignore</Link>
+          <Link>Restoraunt.Service\.dockerignore</Link>
         </Content>
+        <Content Include="Restoraunt.UnitTests\.DS_Store" />
+        <Content Include="Restoraunt.UnitTests\Restoraunt.UnitTests.csproj" />
+        <Content Include="Restoraunt.BL.UnitTests\.DS_Store" />
+        <Content Include="Restoraunt.BL.UnitTests\Restoraunt.BL.UnitTests.csproj" />
         <Content Include="Restoraunt.BL\Admins\.DS_Store" />
     </ItemGroup>
 

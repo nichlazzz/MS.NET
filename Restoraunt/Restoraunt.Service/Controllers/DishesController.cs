@@ -5,6 +5,7 @@ using Restoraunt.Restoraunt.BL.Auth.Entities;
 using Restoraunt.Restoraunt.Service.Controllers.Entities;
 using Restoraunt.Restoraunt.BL.Dishes;
 using Restoraunt.Restoraunt.BL.Dishes.Entities;
+using DishesFilter = Restoraunt.Restoraunt.BL.Dishes.Entities.DishesFilter;
 using UpdateDishModel = Restoraunt.Restoraunt.BL.Dishes.Entities.UpdateDishModel;
 
 namespace Restoraunt.Restoraunt.Service.Controllers;

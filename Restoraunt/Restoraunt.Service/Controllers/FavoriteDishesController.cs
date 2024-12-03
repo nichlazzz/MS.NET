@@ -5,6 +5,7 @@ using Restoraunt.DataAccess.Migrations.Restoraunt.BL.FavoriteDishes.Entities;
 using Restoraunt.Restoraunt.BL.Auth;
 using Restoraunt.Restoraunt.BL.FavoriteDishes.Entities;
 using Restoraunt.Restoraunt.Service.Controllers.Entities;
+using FavoriteDishesFilter = Restoraunt.Restoraunt.BL.FavoriteDishes.Entities.FavoriteDishesFilter;
 
 namespace Restoraunt.Restoraunt.Service.Controllers;
 [Authorize]

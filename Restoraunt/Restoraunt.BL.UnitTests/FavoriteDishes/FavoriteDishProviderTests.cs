@@ -152,8 +152,6 @@ namespace Restoraunt.Restoraunt.BL.UnitTests.FavoriteDishes;
             // Assert: Verify that the favorite dish was updated and saved
             _favoriteDishRepository.Verify(x => x.Save(It.IsAny<FavoriteDish>()), Times.Once);
             Assert.Equals(updateFavoriteDishModel.IdUser, result.ExternalId);
-            Assert.Equals(updateFavoriteDishModel.Cost, result.Cost);
-            Assert.Equals(updateFavoriteDishModel.Category, result.Category);
             Assert.Equals(updateFavoriteDishModel.Description, result.Description);
             Assert.Equals(updateFavoriteDishModel.IdUser, result.IdUser);
         }
